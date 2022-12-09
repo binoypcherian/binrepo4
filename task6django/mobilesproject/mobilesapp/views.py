@@ -25,6 +25,7 @@ def add(request):
         descnew=request.POST.get('description')
         mobilenew=Mobile(name=namenew,img=imgnew,make=makenew,desc=descnew)
         mobilenew.save()
+        return redirect('/')
     return render(request, 'addnew.html')
 
 def edit(request, mobile_id):
